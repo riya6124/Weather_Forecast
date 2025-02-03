@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Weather Forecast</h1>
+        <form method="POST">
+            <input type="text" name="city" placeholder="Enter city name" required>
+            <button type="submit">Get Weather</button>
+        </form>
+
+        {% if error_message %}
+            <p style="color: red; text-align: center;">{{ error_message }}</p>
+        {% endif %}
+
+        {% if weather_data %}
+            <div class="weather-info">
+                <h2>Weather in {{ weather_data['city']['name'] }}</h2>
+                <ul>
+                    {% for day in weather_data['list'] %}
+                        <li class="day">
+                            <p><strong>Date:</strong> {{ day['dt_txt'] }}</p>
+                            <p><strong>Temperature:</strong> {{ day['main']['temp'] }}°C</p>
+                            <p><strong>Weather:</strong> {{ day['weather'][0]['description'] }}</p>
+                            <img src="http://openweathermap.org/img/wn/{{ day['weather'][0]['icon'] }}@2x.png" alt="weather icon">
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
