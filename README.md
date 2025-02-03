@@ -16,8 +16,6 @@ This is a simple weather forecast application built using Flask. It fetches weat
 
 ## Installation
 
-
-```bash
 1. Clone the repository:
 git clone https://github.com/your-username/weather-forecast.git
 cd weather-forecast
