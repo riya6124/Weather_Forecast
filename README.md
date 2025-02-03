@@ -30,16 +30,16 @@ Get your API key and replace 'your_api_key' in app.py with your actual API key.
 4. Run the Flask app:
 python app.py
 
-Usage
+## Usage
 Open your browser and navigate to http://127.0.0.1:5000/.
 Enter the name of any city in the input field and click "Get Weather."
 The 7-day weather forecast for the entered city will be displayed below the form, including temperature, weather description, and icons.
 
-Acknowledgments
+## Acknowledgments
 OpenWeatherMap for the weather data API.
 Flask for building the web application.
 
-Contact
+## Contact
 For any inquiries or contributions, feel free to open an issue or contact me at riyyashharmaa@gmail.com.
 
 
